@@ -7,7 +7,7 @@ let arr_notas = [...document.querySelectorAll('.input-nota')];
 
 let arr_porcentaje = [...document.querySelectorAll('.input-porcentaje')];
 
-let promedio = 0;
+var promedio = 0;
 
 btn.addEventListener ('click', function(){
 
@@ -23,21 +23,46 @@ btn.addEventListener ('click', function(){
 
 	console.log(arr_porcentaje);
 });
-
 arr_notas.forEach(function(elem, index){
 	elem.addEventListener ('blur', function(){
-		console.log('hola');
-		obt_promedio();
+		promedio = 0;
+		var a = 0;
+				for (var i = 0; i<=arr_porcentaje.length - 1 ; i++) {
+					a += parseInt(arr_porcentaje[i].value);
+				}
+		arr_notas.forEach(function(w, ind){
+
+				promedio += parseInt(arr_notas[ind].value) * parseInt(arr_porcentaje[ind].value) / a;
+				// console.log(promedio);
+
+
+
+			// c += parseInt(w.value);
+			// obt_promedio(i);
+		});
+		console.log(promedio);
+		/*promedio += parseInt(arr_notas[index].value) + parseInt(arr_porcentaje[index].value);
+		console.log(promedio);*/
+		// console.log(parseInt(arr_notas[index].value) + parseInt(arr_porcentaje[index].value));
 	});
 });
 
-function obt_promedio() {
-	for(let i=0;i<=arr_notas.length;i++){
+function obt_promedio(ind) {
+	/*var promedio = 0;
+	var a = 0;
+		for (var i = 0; i<=arr_porcentaje.length - 1 ; i++) {
+			a += parseInt(arr_porcentaje[i].value);
+		}*/
+		// console.log(a);
+
+	promedio = parseInt(arr_notas[ind].value) * parseInt(arr_porcentaje[ind].value) / a;
+	console.log(promedio);
+	/*for(let i=0;i<=arr_notas.length;i++){
 		for (let j=0;j<=arr_porcentaje.length;j++){
 			if (i == j){
 				promedio = parseInt(arr_notas[i])*parseInt(arr_porcentaje[j]);
 				console.log(promedio);
 			}
 		}
-	}
+	}*/
 }

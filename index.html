@@ -2,15 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/bootstrap-4.0.0/dist/css/bootstrap.min.css">
 	<title>Arrastrando</title>
 </head>
 <style>
-	body{
-		background-image: url("https://www.ps4wallpapers.com/wp-content/uploads/2017/03/PS4Wallpapers.com_kakarotssjshenlong.jpg");
-		background-repeat: none;
-		background-size: cover;
-		color: #fff;
-	}
 	ul{
 		list-style: none;
 	}
@@ -18,42 +14,83 @@
 <body>
 	<header id="main-menu"></header>
 	<section id="content-menu">
-		<header id="header-content" class="header-content">
+		<header id="header-content" class="header">
 			<h2>Conoce tu promedio</h2>
 		</header>
-		<article id="content" class="content">
-			<form action="" id="form-prom">
-				<ul id="list-inputs">
-					<li>
-						<input type="text" id="input-nota1" class="input-nota" value="0" placeholder="Ingresa una nota">
-						<input type="text" id="input-porcentaje1" class="input-porcentaje" value="0" placeholder="Ingresa un porcentaje">
-					</li>
-					<li>
-						<input type="text" id="input-nota2" class="input-nota" value="0" placeholder="Ingresa una nota">
-						<input type="text" id="input-porcentaje2" class="input-porcentaje" value="0" placeholder="Ingresa un porcentaje">	
-					</li>
-					<li>
-						<input type="text" id="input-nota3" class="input-nota" value="0" placeholder="Ingresa una nota">
-						<input type="text" id="input-porcentaje3" class="input-porcentaje" value="0" placeholder="Ingresa un porcentaje">	
-					</li>
-					<li>
-						<input type="text" id="input-nota4" class="input-nota" value="0" placeholder="Ingresa una nota">
-						<input type="text" id="input-porcentaje4" class="input-porcentaje" value="0" placeholder="Ingresa un porcentaje">	
-					</li>
-					<li>
-						<input type="text" id="input-nota5" class="input-nota" value="0" placeholder="Ingresa una nota">
-						<input type="text" id="input-porcentaje5" class="input-porcentaje" value="0" placeholder="Ingresa un porcentaje">	
-					</li>
-				</ul>
+		<article id="content" class="container col-xl-3 col-sm-7 col-md-5 col-lg-4 p-3">
+			<form action="" id="form-prom" >
+				<div id="list-inputs">
+					<div class="row">
+						<label for="" class="col-form-label col-3">Nota 1</label>
+								<div class="form-group col-3 p-1" >
+									<input type="text" id="input-nota1" class="input-nota form-control" value="0" placeholder="Nota">
+								</div>
+						<label for="" class="col-form-label col-1">=</label>
+								<div class="form-group col-3 col p-1" >
+									<input type="text" id="input-porcentaje1" class="input-porcentaje form-control" value="0" placeholder="Porcentaje">
+								</div>
+						<label for="" class="col-form-label col-1"> % </label>
+					</div>
+					<div class="row">
+						<label for="" class="col-form-label col-3">Nota 2</label>
+								<div class="form-group col-3 col p-1" >
+									<input type="text" id="input-nota2" class="input-nota form-control" value="0" placeholder="Nota">
+								</div>
+						<label for="" class="col-form-label col-1">=</label>
+								<div class="form-group col-3 col p-1" >
+									<input type="text" id="input-porcentaje2" class="input-porcentaje form-control" value="0" placeholder="Porcentaje">
+								</div>
+						<label for="" class="col-form-label col-1"> % </label>
+					</div>
+					<div class="row">
+						<label for="" class="col-form-label col-3">Nota 3</label>
+								<div class="form-group col-3 col p-1" >
+									<input type="text" id="input-nota3" class="input-nota form-control" value="0" placeholder="Nota">
+								</div>
+						<label for="" class="col-form-label col-1">=</label>
+								<div class="form-group col-3 col p-1" >
+									<input type="text" id="input-porcentaje3" class="input-porcentaje form-control" value="0" placeholder="Porcentaje">
+								</div>
+						<label for="" class="col-form-label col-1"> % </label>
+					</div>
+					<div class="row">
+						<label for="" class="col-form-label col-3">Nota 4</label>
+								<div class="form-group col-3 col p-1" >
+									<input type="text" id="input-nota4" class="input-nota form-control" value="0" placeholder="Nota">
+								</div>
+						<label for="" class="col-form-label col-1">=</label>
+								<div class="form-group col-3 col p-1" >
+									<input type="text" id="input-porcentaje4" class="input-porcentaje form-control" value="0" placeholder="Porcentaje">
+								</div>
+						<label for="" class="col-form-label col-1"> % </label>
+					</div>
+					<div class="row">
+						<label for="" class="col-form-label col-3">Nota 5</label>
+								<div class="form-group col-3 col p-1" >
+									<input type="text" id="input-nota5" class="input-nota form-control" value="0" placeholder="Nota">
+								</div>
+						<label for="" class="col-form-label col-1">=</label>
+								<div class="form-group col-3 col p-1" >
+									<input type="text" id="input-porcentaje5" class="input-porcentaje form-control" value="0" placeholder="Porcentaje">
+								</div>
+						<label for="" class="col-form-label col-1"> % </label>
+					</div>
+				</div>
 			</form>
-			<button id="add-li">ADD</button>
-				<div id="promedio">
-					<h3 id="pro">Se mostrará la nota</h3>
-				</div>			
+			<div class="mx-auto col-3">
+					<button id="add-li" class="btn btn-primary">ADD</button>
+				</div>
+				<div id="promedio" class="mx-auto col-12 text-center p-4">
+					<h3 id="pro">Promedio</h3>
+				</div>
 		</article>
 	</section>
 	<footer></footer>
 
 	<script src="script.js"></script>
+
+	<script src="./css/bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 </body>
 </html>

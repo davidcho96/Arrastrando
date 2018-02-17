@@ -6,8 +6,8 @@ let arr_porcentaje = [...document.querySelectorAll('.input-porcentaje')];
 var promedio = 0;
 /*------------------------Funciones-------------------------------------------------------------------------------------*/
 btn_add.addEventListener ('click', function(){
-	let html_li = '<li> <input type="text" id="input-nota'+(arr_notas.length + 1)+'" class="input-nota" value="0" placeholder="Ingresa una nota"> <input type="text" id="input-porcentaje'+(arr_porcentaje.length + 1)+'" class="input-porcentaje" value="0" placeholder="Ingresa un porcentaje"> </li>';
-	
+	console.log(arr_notas);
+	let html_li = '<div class="row"><label for="" class="col-form-label col-3">Nota '+(arr_notas.length + 1)+'</label><div class="form-group col-3 col p-1" ><input type="text" id="'+(arr_notas.length - 1)+'" class="input-nota form-control" value="0" placeholder="Nota"></div><label for="" class="col-form-label col-1"> = </label><div class="form-group col-3 col p-1" ><input type="text" id="'+ (arr_porcentaje.length - 1) +'" class="input-porcentaje form-control" value="0" placeholder="Ingresa un porcentaje"></div><label for="" class="col-form-label col-1"> % </label></div>';
 	inputs_list.insertAdjacentHTML('beforeend', html_li);
 	
 	arr_notas = [...document.querySelectorAll('.input-nota')];

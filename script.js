@@ -18,13 +18,17 @@ var promedio_examen = 0;
 /*------------------------Funciones-------------------------------------------------------------------------------------*/
 btn_add.addEventListener ('click', function(){
 	console.log(arr_notas);
-	let html_li = '<div class="row"><label for="" class="col-form-label col-3">Nota '+(arr_notas.length + 1)+'</label><div class="form-group col-3 col p-1" ><input type="text" id="'+(arr_notas.length - 1)+'" class="input-nota form-control" value="0" placeholder="Nota"></div><label for="" class="col-form-label col-1"> = </label><div class="form-group col-3 col p-1" ><input type="text" id="'+ (arr_porcentaje.length - 1) +'" class="input-porcentaje form-control" value="0" placeholder="Ingresa un porcentaje"></div><label for="" class="col-form-label col-1"> % </label></div>';
+	if(arr_notas.length >= 15){
+		alert('Sobrepasaste el límite');
+	}else{
+	let html_li = '<div class="row"><label for="" class="col-form-label col-3">Nota '+(arr_notas.length + 1)+'</label><div class="form-group col-3 col p-1" ><input type="text" id="'+(arr_notas.length - 1)+'" class="input-nota form-control" value="0" placeholder="Nota"></div><label for="" class="col-form-label col-1"> = </label><div class="form-group col-3 col p-1" ><input type="text" id="'+ (arr_porcentaje.length - 1) +'" class="input-porcentaje form-control" value="0" placeholder="Porcentaje"></div><label for="" class="col-form-label col-1"> % </label></div>';
 	inputs_list.insertAdjacentHTML('beforeend', html_li);
 	
 	arr_notas = [...document.querySelectorAll('.input-nota')];
 	arr_porcentaje = [...document.querySelectorAll('.input-porcentaje')];
 
 	calcular();
+}
 });
 /*----------------------------------------------------------------------------------------------------------------------*/
 calcular();
@@ -50,6 +54,7 @@ function events(elementos){
 				obtenerPromedioExamen();
 			}else{
 				obtenerPromedio();
+				obtenerPromedioExamen();
 			 	console.log('adios');
 			}
 		}
@@ -69,6 +74,7 @@ function events(elementos){
 				obtenerPromedioExamen();
 			}else{
 				obtenerPromedio();
+				obtenerPromedioExamen();
 			 	console.log('adios');
 			}
 		}
@@ -110,7 +116,7 @@ function obtenerPromedioExamen(){
 			porcentaje_total += parseInt(arr_porcentaje[i].value);
 		}
 		if(porcentaje_total !== 0){
-			promedio_examen = ((promedio * 75) / (porcentaje_total)) + (parseInt(nota_examen.value) * parseInt(porcentaje_examen.value) / porcentaje_total);
+			promedio_examen = ((promedio * (100-parseInt(porcentaje_examen.value))) / (porcentaje_total)) + (parseInt(nota_examen.value) * parseInt(porcentaje_examen.value) / porcentaje_total);
 			document.getElementById('promedio-examen').textContent = promedio_examen.toFixed(1);
 		}
 

@@ -1,0 +1,12 @@
+{
+  "name": "Arrastrando",
+  "short_name": "Arrastrando",
+  "description": "Calcula tu promedio",
+  "background_color": "#ffff",
+  "theme_color": "#ff7c0a",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "",
+  "scope": "./",
+  "lang": "es-MX"
+}

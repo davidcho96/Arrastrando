@@ -143,10 +143,3 @@ function obtenerPromedioExamen() {
     ).textContent = promedio_examen.toFixed(1);
   }
 }
-
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker
-    .register("./sw.js")
-    .then(reg => console.log("Registro de SW exitoso", reg))
-    .catch(err => console.warn("Erros", err));
-}

@@ -8,5 +8,12 @@
   "display": "standalone",
   "start_url": "",
   "scope": "./",
-  "lang": "es-MX"
+  "lang": "es-MX",
+  "icons": [
+    {
+      "src": "./img/icon144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
 }

@@ -1,4 +1,5 @@
 /*------------------------Variables-------------------------------------------------------------------------------------*/
+let inputs_list = document.getElementById("list-inputs");
 let btn_add = document.getElementById("add-li");
 var arr_notas = [...document.querySelectorAll(".input-nota")];
 let arr_porcentaje = [...document.querySelectorAll(".input-porcentaje")];
